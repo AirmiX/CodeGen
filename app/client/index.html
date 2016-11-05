@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+
+<script src="/bower_components/angular/angular.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.js"></script>
+<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-1.3.3.js"></script>
+
+<script src="/app/app.module.js"></script>
+<script src="/app/components/country/country.module.js"></script>
+<script src="/app/components/country/country.route.js"></script>
+<script src="/app/components/country/country.service.js"></script>
+<script src="/app/components/country/country.controller.js"></script>
+<script src="/app/components/city/city.module.js"></script>
+<script src="/app/components/city/city.route.js"></script>
+<script src="/app/components/city/city.service.js"></script>
+<script src="/app/components/city/city.controller.js"></script>
+<script src="/app/components/restaurantBrand/restaurantBrand.module.js"></script>
+<script src="/app/components/restaurantBrand/restaurantBrand.route.js"></script>
+<script src="/app/components/restaurantBrand/restaurantBrand.service.js"></script>
+<script src="/app/components/restaurantBrand/restaurantBrand.controller.js"></script>
+<script src="/app/components/restaurant/restaurant.module.js"></script>
+<script src="/app/components/restaurant/restaurant.route.js"></script>
+<script src="/app/components/restaurant/restaurant.service.js"></script>
+<script src="/app/components/restaurant/restaurant.controller.js"></script>
+<script src="/app/components/seller/seller.module.js"></script>
+<script src="/app/components/seller/seller.route.js"></script>
+<script src="/app/components/seller/seller.service.js"></script>
+<script src="/app/components/seller/seller.controller.js"></script>
+<script src="/app/components/admin/admin.module.js"></script>
+<script src="/app/components/admin/admin.route.js"></script>
+<script src="/app/components/admin/admin.service.js"></script>
+<script src="/app/components/admin/admin.controller.js"></script>
+<script src="/app/components/menuItemCategory/menuItemCategory.module.js"></script>
+<script src="/app/components/menuItemCategory/menuItemCategory.route.js"></script>
+<script src="/app/components/menuItemCategory/menuItemCategory.service.js"></script>
+<script src="/app/components/menuItemCategory/menuItemCategory.controller.js"></script>
+<script src="/app/components/menuItem/menuItem.module.js"></script>
+<script src="/app/components/menuItem/menuItem.route.js"></script>
+<script src="/app/components/menuItem/menuItem.service.js"></script>
+<script src="/app/components/menuItem/menuItem.controller.js"></script>
+
+<script src="/bower_components/angular-route/angular-route.js"></script>
+
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+
+<title>DemoApp</title>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Home</a> 
+				<a class="navbar-brand" href="/#/countryList">Countries</a>
+				<a class="navbar-brand" href="/#/cityList">Cities</a>
+				<a class="navbar-brand" href="/#/restaurantBrandList">Restaurant Brands</a>
+				<a class="navbar-brand" href="/#/restaurantList">Restaurants</a>
+				<a class="navbar-brand" href="/#/sellerList">Sellers</a>
+				<a class="navbar-brand" href="/#/menuItemCategoryList">Menu Item Categories</a>
+				<a class="navbar-brand" href="/#/menuItemList">Menu Items</a>
+			</div>
+		</div>
+	</nav>
+
+	<div class="jumbotron">
+		<div class="container text-center">
+			<h1>Demo App</h1>
+			<p>Web Application for Evidenting Restaurants</p>
+		</div>
+	</div>
+	
+	<div class="container" ng-view></div>
+	
+	<hr>
+	
+	<footer>
+		<p>Footer</p>
+	</footer>
+	
+</body>
+</html>

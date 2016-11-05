@@ -1,0 +1,45 @@
+	
+<h2>Restaurant Brands<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+	
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<td>Name</td>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="restaurantBrand in restaurantBrandList">
+			<td>{{ restaurantBrand.name }}</td>			
+			
+			
+			<td>
+				<a class="btn btn-success btn-sm" href="/#/restaurantBrandList/{{ restaurantBrand.id }}">view</a>
+				<a class="btn btn-warning btn-sm" href="/#/restaurantBrandList/edit/{{ restaurantBrand.id }}">edit</a>
+				<button class="btn btn-danger btn-sm" ng-click="remove(restaurantBrand.id)">delete</button>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/restaurantBrandList/add">Add new RestaurantBrand</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+

@@ -1,0 +1,14 @@
+{
+  "name": "angular-phonecat",
+  "description": "A starter project for AngularJS",
+  "version": "0.0.0",
+  "license": "ISC",
+  "main": "index.html",
+  "dependencies": {
+    "angular": "1.5.x",
+    "angular-mocks": "1.5.x",
+    "angular-route": "1.5.x",
+    "angular-ui-bootstrap": "2.2.x",
+    "bootstrap": "3.3.x"
+  }
+}

@@ -1,0 +1,57 @@
+	
+<h2>Restaurants<span class="badge">{{totalItems}}</span></h2>
+	
+<div ng-init="page=1; getAll();">
+
+
+<div class="row">
+  	<div ng-repeat="restaurant in restaurantList" class="col-md-3">
+    	<div class="thumbnail">
+	      	<div class="caption">
+	      	<h3> {{restaurant.name}} </h3>
+				<p>StreetName : {{ restaurant.streetName }}</p>			
+			
+				<p>StreetNumber : {{ restaurant.streetNumber }}</p>			
+			
+				<p>GpsLatitude : {{ restaurant.gpsLatitude }}</p>			
+			
+				<p>RestaurantBrand : {{ restaurant.restaurantBrand.name }}</p>	
+			
+				<p>City : {{ restaurant.city.name }}</p>	
+			
+				<p>GpsLongitude : {{ restaurant.gpsLongitude }}</p>			
+			
+        	</div>
+        	<div>
+	      		<span>
+					<a class="btn btn-success btn-sm" href="/#/restaurantList/{{ restaurant.id }}">view</a>
+	      		</span>
+	      		<span>
+					<a class="btn btn-warning btn-sm" href="/#/restaurantList/edit/{{ restaurant.id }}">edit</a>
+				</span>
+				<span>
+					<button class="btn btn-danger btn-sm" ng-click="remove(restaurant.id)">delete</button>
+	      		</span>
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+	
+<div>
+
+<div class="row text-center">
+	<span ng-hide="hideSpinner" class="glyphicon glyphicon-refresh glyphicon-refresh-animate"></span>
+	<span ng-show="showError" class="label label-danger">Ooops, something went wrong! :)</span>
+</div>
+
+<div class="row">
+	<uib-pagination total-items="totalItems" items-per-page="{{maxSize}}" ng-model="page" ng-click="getAll()" max-size="maxSize" class="pagination-sm" boundary-links="true"></uib-pagination>
+</div>
+
+<a href="/#/restaurantList/add">Add new Restaurant</a>
+
+<div class = "row">	
+	<uib-alert ng-repeat="alert in alerts" type="{{alert.type}}" close="closeAlert($index)">{{alert.msg}}</uib-alert>	
+</div>	
+
